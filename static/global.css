@@ -1,0 +1,68 @@
+html{
+    font-family: Helvetica, Arial, sans-serif;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container-main{
+    background-color: rgb(245, 245, 245);
+    max-width: 1500px;
+    max-height: fit-content;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 1.5%;
+}
+.title{
+    font-size:200%;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-weight: 300;
+}
+.content{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.sub-title{
+    font-size: 120%;
+    font-weight: 400;
+}
+.sub-heading{
+    font-size: 105%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-style: oblique;
+    font-weight: 500;
+}
+.container-info{
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    max-width: 80%;
+}
+.sub-content{
+    padding-bottom: 1%;
+}
+mark{
+    background-color: rgb(238, 238, 139);
+}
+li{
+    padding: 0.25%;
+}
+a{
+    color: rgb(123, 60, 183);
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
