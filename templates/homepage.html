@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="{% static 'homepage.css' %}">
-    <title>Document</title>
+    <title>Homepage</title>
 </head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <body>
@@ -59,6 +59,38 @@
                 data regarding various factors related to an individual and whether the individual has diabetes or not. An analysis of the factors in order to 
                 investigate whether any of these factors have a relationship with the presence or absence of diabetes in the individual has been carried out. 
                 The detailed analysis and construction of the model can be seen in <a href="https://github.com/omr-hk/Diabetes-Classification">github</a>.</p>
+            <p class="content">A small portion of the dataset can be seen below. To view more details about the dataset click <a href="{% url 'datapage' %}">here</a>.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Hypertension</th>
+                    <th>Heart Disease</th>
+                    <th>Smoking History</th>
+                    <th>BMI</th>
+                    <th>HbA1c Level</th>
+                    <th>Blood Glucose Level</th>
+                    <th>Diabetes</th>
+                </tr>
+                {% for record in records %}
+                    <tr>
+                        <td>{{record.id}}</td>
+                        <td>{{record.gender}}</td>
+                        <td>{{record.age}}</td>
+                        <td>{{record.hypertension}}</td>
+                        <td>{{record.heart_disease}}</td>
+                        <td>{{record.smoking_history}}</td>
+                        <td>{{record.bmi}}</td>
+                        <td>{{record.HbA1c_level}}</td>
+                        <td>{{record.blood_glucose_level}}</td>
+                        <td>{{record.diabetes}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </body>

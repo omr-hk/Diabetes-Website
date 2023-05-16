@@ -66,3 +66,22 @@ a:link{
 a:hover{
     text-decoration: underline;
 }
+
+table,tr,td,th {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 2%;
+}
+.table-container{
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    max-width: 80%;
+    overflow-x: scroll;
+}
