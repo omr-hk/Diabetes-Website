@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/fontawesome.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
     <title>Homepage</title>
 </head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <body>
+    <div class="nav-bar">
+        <a id="database" style="color: black;" href="{% url 'datapage' %}"><i class="fa-solid fa-database" style="font-size: large;"></i></a>
+        <a id="steth" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope" style="font-size: large;"></i></a>
+    </div>
     <div class="container-main">
         <p class="title">DIABETES</p>
         <div class="container-info">
@@ -55,10 +62,10 @@
                 </ul></p>
             <br>
             <p class="sub-title">Dataset</p>
-            <p class="content">The dataset is taken from <a href="https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset">kaggle</a> and contains
+            <p class="content">The dataset is taken from <a href="https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset" target="_blank">kaggle</a> and contains
                 data regarding various factors related to an individual and whether the individual has diabetes or not. An analysis of the factors in order to 
                 investigate whether any of these factors have a relationship with the presence or absence of diabetes in the individual has been carried out. 
-                The detailed analysis and construction of the model can be seen in <a href="https://github.com/omr-hk/Diabetes-Classification">github</a>.</p>
+                The detailed analysis and construction of the model can be seen in <a href="https://github.com/omr-hk/Diabetes-Classification" target="_blank">github</a>.</p>
             <p class="content">A small portion of the dataset can be seen below. To view more details about the dataset click <a href="{% url 'datapage' %}">here</a>.</p>
         </div>
 
@@ -91,6 +98,15 @@
                     </tr>
                 {% endfor %}
             </table>
+        </div>
+
+        <div class="container-info">
+            <p class="sub-title">Classifier</p>
+            <p class="content">The classifier built on the dataset can be used to predict whether the an individual with the given characteristics has diabetes
+                or not. This model takes in eight inputs regarding data of the individual and gives out one output. The detailed analysis of the features and the 
+                construction of the model can be seen on <a href="https://github.com/omr-hk/Diabetes-Classification" target="_blank">github</a>.
+            </p>
+            <p class="content">You can mess with the <a href="">classifier</a> and see whether the results you are getting are accurate or not.</p>
         </div>
     </div>
 </body>

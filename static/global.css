@@ -13,12 +13,12 @@ body{
 .container-main{
     background-color: rgb(245, 245, 245);
     max-width: 1500px;
-    max-height: fit-content;
+    height: fit-content;
     margin-top: 2%;
     margin-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
-    border-radius: 1.5%;
+    border-radius: 0.5%;
 }
 .title{
     font-size:200%;
@@ -84,4 +84,22 @@ table{
     height: fit-content;
     max-width: 80%;
     overflow-x: scroll;
+}
+
+.nav-bar{
+    float: left;
+    position: fixed;
+    padding: 3%;
+}
+
+@media (max-width: 500px) {
+    .nav-bar{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .container-main{
+        border-radius: 0.25%;
+    }
 }

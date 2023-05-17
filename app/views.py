@@ -7,5 +7,8 @@ def homepage(request):
     return render(request,'homepage.html',{'records':records})
 
 def datapage(request):
-    records=Patient.objects.all().order_by('id')[:100]
+    records=Patient.objects.all().order_by('id')[:500]
     return render(request,'datapage.html',{'records':records})
+
+def classifierpage(request):
+    return render(request,'classifier.html')

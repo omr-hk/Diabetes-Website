@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     "app",
     "django_extensions",
+    "fontawesomefree",
 ]
 
 MIDDLEWARE = [

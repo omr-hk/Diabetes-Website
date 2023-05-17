@@ -1,0 +1,76 @@
+#database,#homepage{
+    width: 100%;
+    height: 3em;
+    display: block;
+    text-align: center;
+
+}
+form{
+    width:70%;
+    height: fit-content;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    margin-bottom: 2%;
+}
+table,td,tr{
+    text-align: left;
+    border: none;
+    margin-bottom: 0;
+}
+table{
+    width: 60%;
+}
+input,select{
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+}
+#op{
+    width: 50%;
+}
+tr{
+    height: 2.5em;
+}
+#sub{
+    width: 50%;
+}
+.mobile-container{
+    display:none;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    max-width: 80%;
+}
+
+.mobile-container input{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.mobile-container select{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.mobile-container form{
+    width:fit-content;
+    height: fit-content;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 800px) {
+    .mobile-container{
+        display: block;
+    }
+    .form{
+        display: none;
+    }
+}

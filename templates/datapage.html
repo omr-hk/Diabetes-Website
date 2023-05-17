@@ -7,11 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="{% static 'datapage.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/fontawesome.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
     <title>The Dataset</title>
 </head>
 <body>
-
+    <div class="nav-bar">
+        <a style="color: black;" href="{% url 'homepage' %}"><i class="fa-solid fa-house" id="homepage"></i></a>
+        <a id="steth" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope" style="font-size: large;"></i></a>
+    </div>
     <div class="container-main">
+        <div class="container-info">
+            <p class="title">The Dataset</p>
+            <p class="content">The Diabetes prediction dataset is a collection of medical and demographic data from patients, along with their diabetes status 
+                (positive or negative). The data includes features such as age, gender, body mass index (BMI), hypertension, heart disease, smoking history, 
+                HbA1c level, and blood glucose level. This dataset can be used to build machine learning models to predict diabetes in patients based on their 
+                medical history and demographic information. This can be useful for healthcare professionals in identifying patients who may be at risk of 
+                developing diabetes and in developing personalized treatment plans. Additionally, the dataset can be used by researchers to explore the 
+                relationships between various medical and demographic factors and the likelihood of developing diabetes. The dataset is ownded and maintained by 
+                Mohammed Mustafa. The dataset contains about 100,000 rows and displaying the entire dataset seems unnecessary. In order to understand the dataset,
+                around 500 records have been displayed in the table below.</p>
+        </div>
+
+
         <div class="table-container">
             <table>
                 <tr>
@@ -41,6 +60,32 @@
                     </tr>
                 {% endfor %}
             </table>
+        </div>
+
+        <div class="container-info">
+            <p class="sub-title">The features and label</p>
+            <p class="content">
+                The dataset contains eight feaures and one label excluding the column 'ID'. The features include: <br>
+                <ul>
+                    <li><b>Gender</b>: takes up either Male or Female</li>
+                    <li><b>Age</b>: The age of the individual</li>
+                    <li><b>Hypertension</b>: Denotes whether the individual has hypertension (denoted by 1) or not (denoted by 0)</li>
+                    <li><b>Heart disease</b>: Denotes whether the individual has a heart disease (denoted by 1) or not (denoted by 0)</li>
+                    <li><b>Smoking history</b>: A category that best describes the smoking habits of the individual.</li>
+                    <li><b>BMI</b>: Body Mass Index of the individual</li>
+                    <li><b>HbA1c level</b>: a simple blood test that measures your average blood sugar levels over the past 3 months</li>
+                    <li><b>Blood glucose level</b>: The level of glucose (sugar) in the individuals blood</li>
+                </ul>
+            </p>
+            <p class="content">The label is the diabetes column and this is the column that is meant to be predicted. The column is denoted by 1 if the individual has
+                diabetes and 0 if the individual does not have diabetes. The prediction can be done by analysisng the features and understanding the relationship 
+                between the features and the label and how a small or major change in one of the features effect the probability of the label taking up either 
+                of its possible values.
+            </p>
+
+            <p class="content">The detailed analysis of each of these features and the effect it has on the label can be found in 
+                <a href="https://github.com/omr-hk/Diabetes-Classification" target="_blank">github</a>.
+            </p>
         </div>
     </div>
 </body>
