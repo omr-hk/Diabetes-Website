@@ -12,3 +12,8 @@ class Patient(models.Model):
     HbA1c_level=models.FloatField()
     blood_glucose_level=models.IntegerField()
     diabetes=models.IntegerField()
+
+
+class Poll(models.Model):
+    correct=models.PositiveIntegerField()
+    incorrect=models.PositiveBigIntegerField()

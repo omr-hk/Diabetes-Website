@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
     <title>The Dataset</title>
+    <link rel="shortcut icon" href="{% static 'resources/database-solid.ico' %}" type="image/x-icon">
 </head>
 <body>
     <div class="nav-bar">
@@ -19,7 +20,12 @@
     </div>
     <div class="container-main">
         <div class="container-info">
-            <p class="title">The Dataset</p>
+            <p class="title">Dataset</p>
+            <div class="heading">
+                <a id="homepage-mob" style="color: black;" href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a>
+                <p class="title-m">Dataset</p>
+                <a id="steth-mob" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope mobile" style="font-size: large;"></i></a>
+            </div>
             <p class="content">The Diabetes prediction dataset is a collection of medical and demographic data from patients, along with their diabetes status 
                 (positive or negative). The data includes features such as age, gender, body mass index (BMI), hypertension, heart disease, smoking history, 
                 HbA1c level, and blood glucose level. This dataset can be used to build machine learning models to predict diabetes in patients based on their 

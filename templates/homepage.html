@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/fontawesome.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
+
     <title>Homepage</title>
+    <link rel="shortcut icon" href="{% static 'resources/house-solid.ico' %}" type="image/x-icon">
 </head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <body>
@@ -19,7 +21,12 @@
         <a id="steth" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope" style="font-size: large;"></i></a>
     </div>
     <div class="container-main">
-        <p class="title">DIABETES</p>
+        <p class="title">Diabetes</p>
+        <div class="heading">
+            <a id="database-mob" style="color: black;" href="{% url 'datapage' %}"><i class="fa-solid fa-database mobile" style="font-size: large;"></i></a>
+            <p class="title-m">Diabetes</p>
+            <a id="steth-mob" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope mobile" style="font-size: large;"></i></a>
+        </div>
         <div class="container-info">
             <p class="content">
                 Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat.

@@ -21,5 +21,7 @@ from . import views
 urlpatterns=[
     path('',views.homepage,name="homepage"),
     path('datapage',views.datapage,name="datapage"),
-    path('classifier',views.classifierpage,name="classifierpage")
+    path('classifier',views.classifierpage,name="classifierpage"),
+    path('classifier/predict',views.predictpage,name="predictpage"),
+    path('classifier/poll',views.pollpage,name="pollpage")
 ]

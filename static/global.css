@@ -92,9 +92,30 @@ table{
     padding: 3%;
 }
 
+.heading{
+    display: none;
+}
+
+#database-mob,#steth-mob,#homepage-mob{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 3.9em;
+}
+.title-m{
+    font-size:200%;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-weight: 300;
+}
+
 @media (max-width: 500px) {
-    .nav-bar{
+    .nav-bar, .title{
         display: none;
+    }
+    .heading{
+        display:flex;
     }
 }
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
     
     <title>Classifier</title>
+    <link rel="shortcut icon" href="{% static 'resources/stethoscope-solid.ico' %}" type="image/x-icon">
 </head>
 <body>
     <div class="nav-bar">
@@ -21,12 +22,20 @@
 
     <div class="container-main">
         <p class="title">Classifier</p>
+        <div class="heading">
+            <a id="homepage-mob" style="color: black;" href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a>
+            <p class="title-m">Classifier</p>
+            <a id="database-mob" style="color: black;" href="{% url 'datapage' %}"><i class="fa-solid fa-database mobile" style="font-size: large;"></i></a>
+        </div>
         <div class="container-info">
             <p class="content">Welcome to the classifier page. If you have gone through the dataset page you would know exactly what the the form represents. 
                 The form takes in input values regarding an individual and tells whether the individual has diabetes or not based on the data given. Below this form 
                 you will find a poll or a voting system off which you can choose whether the classifier is accurate or not based on the data you have inputed. if you are
-                unsure of the fields given below, do read through the <a href="{% url 'datapage' %}">dataset</a> page in orderto get a better idea as to the input data.
+                unsure of the fields given below, do read through the <a href="{% url 'datapage' %}">dataset</a> page in order to get a better idea as to the data to be entered.
             </p>
+
+            <p class="content"><span style="color: rgb(128, 9, 9);">Please note that if the data entered is inaccurate or does not conform to the data shown in the <a href="{% url 'datapage' %}">dataset</a> page, the results
+                too would be inaccurate.</span></p>
         </div>
 
         <div class="container-info form">
@@ -34,7 +43,7 @@
                 <table id="form">
                     <tr>
                         <td><label for="gender">Gender</label></td>
-                        <td id="op"><select name="gender" id="gender">
+                        <td id="op"><select name="gender" id="gender" required>
                             <option value="Female">FEMALE</option>
                             <option value="Male">MALE</option>
                         </select></td>
@@ -42,13 +51,13 @@
                     <tr>
                         <td><label for="age">Age: </label></td>
                         <td id="op">
-                            <input type="number" id="age" max="150" step="1">
+                            <input type="number" id="age" name="age" max="150" step="1" required>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="hypertension">Hypertension: </label></td>
                         <td id="op">
-                            <select name="hypertension" id="hypertension">
+                            <select name="hypertension" id="hypertension" required>
                                 <option value="0">NO</option>
                                 <option value="1">YES</option>
                             </select>
@@ -57,7 +66,7 @@
                     <tr>
                         <td><label for="heart_disease">Heart Disease: </label></td>
                         <td id="op">
-                            <select name="heart_disease" id="heart_disease">
+                            <select name="heart_disease" id="heart_disease" required>
                                 <option value="0">NO</option>
                                 <option value="1">YES</option>
                             </select>
@@ -66,7 +75,7 @@
                     <tr>
                         <td><label for="smoking_history">Smoking History: </label></td>
                         <td id="op">
-                            <select name="smoking_history" id="smoking_history">
+                            <select name="smoking_history" id="smoking_history" required>
                                 <option value="never">NEVER</option>
                                 <option value="No Info">NO INFO</option>
                                 <option value="current">CURRENT</option>
@@ -79,19 +88,19 @@
                     <tr>
                         <td><label for="bmi">BMI: </label></td>
                         <td id="op">
-                            <input type="number" name="bmi" id="bmi" step="0.01">
+                            <input type="number" name="bmi" id="bmi" step="0.01" required>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="HbA1c_level">HbA1c level: </label></td>
                         <td id="op">
-                            <input type="number" name="HbA1c_level" id="HbA1c_level" step="0.1">
+                            <input type="number" name="HbA1c_level" id="HbA1c_level" step="0.1" required>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="blood_glucose_level">Blood Glucose Level: </label></td>
                         <td id="op">
-                            <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="1">
+                            <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="1" required>
                         </td>
                     </tr>
                     <tr>
@@ -102,26 +111,26 @@
         </div>
 
         <div class="mobile-container">
-            <form action="">
+            <form action="/classifier/predict">
                 <label for="gender">Gender: </label>
-                <select id="gender" name="gender">
+                <select id="gender" name="gender" required>
                     <option value="Female">FEMALE</option>
                     <option value="Male">MALE</option>
                 </select><br>
                 <label for="age">Age: </label>
-                <input type="number" id="age" max="150" step="1"><br>
+                <input type="number" id="age" name="age" max="150" step="1" required><br>
                 <label for="hypertension">Hypertension: </label>
-                <select name="hypertension" id="hypertension">
+                <select name="hypertension" id="hypertension" required>
                     <option value="0">NO</option>
                     <option value="1">YES</option>
                 </select><br>
                 <label for="heart_disease">Heart Disease: </label>
-                <select name="heart_disease" id="heart_disease">
+                <select name="heart_disease" id="heart_disease" required>
                     <option value="0">NO</option>
                     <option value="1">YES</option>
                 </select><br>
                 <label for="smoking_history">Smoking History: </label>
-                <select name="smoking_history" id="smoking_history">
+                <select name="smoking_history" id="smoking_history" required>
                     <option value="never">NEVER</option>
                     <option value="No Info">NO INFO</option>
                     <option value="current">CURRENT</option>
@@ -130,12 +139,12 @@
                     <option value="not current">NOT CURRENT</option>
                 </select><br>
                 <label for="bmi">BMI: </label>
-                <input type="number" name="bmi" id="bmi" step="0.01"><br>
+                <input type="number" name="bmi" id="bmi" step="0.01" required><br>
                 <label for="HbA1c_level">HbA1c level: </label>
-                <input type="number" name="HbA1c_level" id="HbA1c_level" step="0.1"><br>
+                <input type="number" name="HbA1c_level" id="HbA1c_level" step="0.1" required><br>
                 <label for="blood_glucose_level">Blood Glucose Level: </label>
-                <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="1"><br>
-                <input type="submit">
+                <input type="number" name="blood_glucose_level" id="blood_glucose_level" step="1" required><br>
+                <input id="sub" style="width: 100%;" type="submit">
             </form>
 
         </div>

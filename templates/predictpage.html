@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <link rel="stylesheet" href="{% static 'predictorpage.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/fontawesome.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/solid.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fontawesomefree/css/brands.css' %}" type="text/css">
+    <title>Prediction</title>
+    <link rel="shortcut icon" href="{% static 'resources/brain-solid.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="nav-bar">
+        <a style="color: black;" href="{% url 'homepage' %}"><i class="fa-solid fa-house" id="homepage"></i></a>
+        <a id="database" style="color: black;" href="{% url 'datapage' %}"><i class="fa-solid fa-database" style="font-size: large;"></i></a>
+        <a id="steth" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope" style="font-size: large;"></i></a>
+    </div>
+    <div class="container-main">
+        <p class="title">Prediction</p>
+        <div class="heading">
+            <a id="homepage-mob" style="color: black;" href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a>
+            <p class="title-m">Prediction</p>
+            <a id="steth-mob" style="color: black;" href="{% url 'classifierpage' %}"><i class="fa-solid fa-stethoscope mobile" style="font-size: large;"></i></a>
+        </div>
+        <div class="container-info">
+            <p class="sub-title">Given Data: </p><br><br>
+            <table>
+                <tr>
+                    <td>Gender:</td>
+                    <td>{{gen}}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ag}}</td>
+                </tr>
+                <tr>
+                    <td>Hypertension:</td>
+                    <td>
+                        {% if hyp == 1 %}
+                            <p>Yes</p>
+                        {% else %}
+                            <p>No</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Heart Disease:</td>
+                    <td>
+                        {% if heart == 1 %}
+                            <p>Yes</p>
+                        {% else %}
+                            <p>No</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Smoking History:</td>
+                    <td>{{smk}}</td>
+                </tr>
+                <tr>
+                    <td>BMI:</td>
+                    <td>{{bmi}}</td>
+                </tr>
+                <tr>
+                    <td>HbA1c Level:</td>
+                    <td>{{hba}}</td>
+                </tr>
+                <tr>
+                    <td>Blood Glucose Level: </td>
+                    <td>{{bcl}}</td>
+                </tr>
+                <tr>
+                    <td><mark>Diabetes:</mark></td>
+                    <td>
+                        {% if result == 'Present' %}
+                            <p style="color: red;">{{result}}</p>
+                        {% else %}
+                            <p style="color: green;">{{result}}</p>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container-info">
+            <p class="sub-title">Poll</p>
+            <p class="content">You can select whether the predicted value is accurate or inaccurate in the poll below. Once you click on either button, you will be redirected back to the 
+                to the classifier page. This is done in order to prevent false votes. The numbers next to each label represent the poll numbers for each option.
+            </p><br>
+        </div>
+
+        <div class="container-info">
+            <form id="poll" action="/classifier/poll" method="post">{% csrf_token %}
+                <button type="submit" name="correct" id="correct">Accurate: {{score.correct}}</button>
+                <button type="submit" name="incorrect" id="incorrect">Inaccurate: {{score.incorrect}}</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+table,td,tr{
+    text-align: left;
+    border: none;
+    margin-bottom: 0;
+}
+table{
+    width: 60%;
+}
+tr{
+    height: 2.5em;
+}
+
+#homepage,#steth,#database{
+    width: 100%;
+    height: 3em;
+    display: block;
+    text-align: center;
+}
+
+#poll{
+    width: 60%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+button{
+    margin: 3em 4em;
+    padding: 3% 0;
+    border: 1px;
+    border-radius: 1.5em;
+    background-color: rgb(199, 199, 199);
+    color: black;
+}
+#correct{
+    padding: 3% 7%;
+}
+#incorrect{
+    padding: 3% 6%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#correct:hover {
+    background-color: rgb(104, 170, 104);
+    color: white;
+}
+
+#incorrect:hover {
+    background-color: rgb(155, 85, 85);
+    color: white;
+}

@@ -105,5 +105,5 @@ webencodings==0.5.1
 websocket-client==1.5.1
 widgetsnbextension==4.0.7
 
-
+scikit-learn==1.2.2
 fontawesomefree==6.4.0
